@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Monitor</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       background:#eaf4ff;font-family:Arial,Helvetica,sans-serif;color:#222}
+  .card{background:#fff;width:100%;max-width:420px;margin:20px;padding:32px 28px;border-radius:14px;
+        box-shadow:0 8px 24px rgba(0,0,0,.12);text-align:center}
+  h1{margin:0 0 6px;color:#1976d2;font-size:28px}
+  h2{margin:0 0 22px;font-size:18px}
+  label{display:block;text-align:left;font-weight:bold;font-size:13px;margin-bottom:6px}
+  input{width:100%;padding:11px;border:1px solid #cfd8e3;border-radius:6px;background:#e8f0fe;font-size:14px}
+  button{margin-top:20px;background:#1976d2;color:#fff;border:0;border-radius:6px;padding:11px 22px;
+         font-size:14px;cursor:pointer}
+  button:hover{background:#1259a6}
+  .error{background:#fde8e8;color:#b42318;padding:10px;border-radius:6px;margin-bottom:16px;font-size:14px}
+  .loading{display:none;margin-top:14px;font-size:13px;color:#555}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>📊 Media Monitor</h1>
+    <h2>YouTube Channel Views Analysis</h2>
+    {% if error %}<div class="error">{{ error }}</div>{% endif %}
+    <form method="POST" action="/analyze" onsubmit="document.getElementById('ld').style.display='block'">
+      <label for="channel_link">YouTube Channel Link</label>
+      <input type="text" id="channel_link" name="channel_link"
+             placeholder="https://www.youtube.com/@channelname" required>
+      <button type="submit">Analyze Channel</button>
+      <div class="loading" id="ld">Fetching videos… large channels can take a moment.</div>
+    </form>
+  </div>
+</body>
+</html>
