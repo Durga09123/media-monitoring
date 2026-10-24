@@ -35,4 +35,4 @@ media_monitor/
 6. Open http://127.0.0.1:5000 and paste e.g. `https://www.youtube.com/@kamarajcollegeofficial1474`
 
 ## 3. Deploy (Render – free)
-https://media-monitoring-cv6l.vercel.app/analyze
+https://media-monitoring-cv6l.vercel.app/
