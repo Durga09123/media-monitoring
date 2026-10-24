@@ -35,23 +35,4 @@ media_monitor/
 6. Open http://127.0.0.1:5000 and paste e.g. `https://www.youtube.com/@kamarajcollegeofficial1474`
 
 ## 3. Deploy (Render – free)
-1. Create a GitHub repo and push this folder (`.env` is git-ignored, so your key stays private).
-   ```
-   git init
-   git add .
-   git commit -m "Media Monitor"
-   git branch -M main
-   git remote add origin https://github.com/<you>/media-monitor.git
-   git push -u origin main
-   ```
-2. On https://render.com → **New → Web Service** → connect the repo.
-   (Or **New → Blueprint** to use `render.yaml`.)
-3. Settings: Build `pip install -r requirements.txt`, Start `gunicorn app:app --timeout 120`.
-4. Add environment variable `YOUTUBE_API_KEY` with your key.
-5. Deploy. Your app will be live at `https://<name>.onrender.com`.
-
-Railway / PythonAnywhere also work with the same files.
-
-## Notes
-- Free YouTube API quota is 10,000 units/day; each analysis uses roughly 1 unit per 50 videos.
-- Free Render services sleep after inactivity, so the first load can take ~30–60 s.
+https://media-monitoring-cv6l.vercel.app/analyze
